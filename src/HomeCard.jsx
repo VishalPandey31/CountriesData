@@ -1,13 +1,14 @@
 import Navbar from './Navbar'
 import SearchBar from './SearchBar'
 import  CardData from './CardData'
-import { useState ,useEffect} from 'react'
-
+import { useState ,useEffect,} from 'react'
 function HomeCard(){
 
      const [Country, setCountry] = useState([])
   const [Search, setSearch] =useState('');
 
+//   const a=useContext(ThemeContext)
+ 
    useEffect(()=>{
 fetch('https://raw.githubusercontent.com/mledoze/countries/master/countries.json')
 .then((res) =>res.json())

@@ -21,7 +21,7 @@ const allCountries = location.state?.allCountries || [];
 
             <div className="cardDetails_Container">
                 <i className="ri-arrow-left-long-line"></i>
-                <button onClick={() => navigate("/")}>Back</button>
+                <button className="back_btn" onClick={() => navigate("/")}>Back</button>
             </div>
 
             <div className="CardDetails_InnerDiv">
