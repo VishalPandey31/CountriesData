@@ -1,11 +1,13 @@
 
 import Navbar from './Navbar'
-import { useNavigate } from "react-router-dom"
-import { useLocation } from "react-router-dom";
+import { useNavigate ,useLocation } from "react-router-dom"
 
 function CardDetails() {
+
 const location = useLocation();
-const CardDetails = location.state;
+const CardDetails = location.state?.selectedCountry;
+const allCountries = location.state?.allCountries || [];
+
     const navigate = useNavigate();
 
     if (!CardDetails) {
@@ -70,6 +72,29 @@ const CardDetails = location.state;
                     </p>
 
                 </div>
+
+                       <div className='BorderCountries'>
+
+                            <h3>Border Countries:</h3>
+                        
+                            {CardDetails.borders?.map((code) => {
+                        
+                                const borderCountry = allCountries.find((c) => c.cca3 === code);
+                        
+                                return (
+                                    <button key={code} onClick={() => {
+                                            if (borderCountry) {
+                                                navigate(location.pathname, {  state: {selectedCountry: borderCountry,allCountries       }   });
+                                            }
+                                        }}
+                                        disabled={!borderCountry}
+                                    >
+                                        {borderCountry?.name.common || code}
+                                    </button>
+                                )
+                        
+                            })}
+                        </div>
 
             </div>
         </>

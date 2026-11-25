@@ -43,7 +43,8 @@
   box-sizing: border-box;
   overflow: hidden;
   margin: 0;
-  background: #fff;
+    background: var(--card-color);
+  color: var(--text-color);
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
@@ -143,4 +144,34 @@
 }
 .InnerTwo p span{
  font-weight: normal;
+}
+.BorderCountries{
+  margin-left: -360px;
+  margin-top: 250px;
+}
+
+:root {
+  --bg-color: white;
+  --text-color: black;
+  --card-color: #f1f1f1;
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: white;
+  --card-color: #242424;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.card {
+  background-color: var(--card-color);
+  color: var(--text-color);
+}
+.darkMode{
+ 
+  cursor: pointer;
 }
