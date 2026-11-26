@@ -1,17 +1,21 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 function CardData({Country,Search}){
 
     const navigate=useNavigate();
 
    const SearchFilter =Country.filter((Country)=>
-      Country.name.common.toLowerCase().includes(Search.toLowerCase())
+      Country.name.common.toLowerCase().includes(Search.toLowerCase()) ||   Country.region.toLowerCase().includes(Search.toLowerCase())
    )
 
+//    if(){
+
+//    }
   
     return(
         <>
+
+           
 
         <div  className="Main-Div">
                   {

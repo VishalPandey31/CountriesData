@@ -30,14 +30,21 @@
   align-items: center;
   justify-content: space-between;
 }
+.Select_Container {
+    padding: 15px;
+    width: 200px;
+    border: 1px solid #e5e7eb;
+    background-color: white;
+    color: black;
+    float: right;
+    margin-top: -50px;
+    position: relative;
+    z-index: 9999;
+}
 
-.Search_Container select{
-    margin-left: 20px;
-  padding: 15px 15px 15px;
-  width: 200px; 
-   background: var(--card-color);
-  color: var(--text-color);   
-
+.Select_Container option {
+    background-color: white;
+    color: black;
 }
 .Card_Container{
   border: 1px solid #e5e7eb;
@@ -155,16 +162,17 @@
   margin-top: 250px;
 }
 
-/* :root {
+:root {
   --bg-color: white;
   --text-color: black;
   --card-color: #f1f1f1;
-} */
+}
 
 [data-theme="dark"] {
   --bg-color: #121212;
   --text-color: white;
   --card-color: #242424;
+  color-scheme: dark;
 }
 
 body {
@@ -179,4 +187,38 @@ body {
 .darkMode{
  
   cursor: pointer;
+}
+
+.shimmer {
+    height: 320px;
+    width: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(128,128,128,0.25) 25%,
+        rgba(200,200,200,0.55) 50%,
+        rgba(128,128,128,0.25) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s linear infinite;
+}
+
+@keyframes shimmer {
+    to {
+        background-position: -200% 0;
+    }
+}
+.ShimmerContainer{
+   
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 280px;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin: 0;
+    background: var(--card-color);
+  color: var(--text-color);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+ 
 }

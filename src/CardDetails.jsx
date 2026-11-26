@@ -2,6 +2,7 @@
 import Navbar from './Navbar'
 import { useNavigate ,useLocation } from "react-router-dom"
 
+
 function CardDetails() {
 
 const location = useLocation();
@@ -18,6 +19,8 @@ const allCountries = location.state?.allCountries || [];
         <>
             <Navbar />
             <hr />
+             
+         
 
             <div className="cardDetails_Container">
                 <i className="ri-arrow-left-long-line"></i>
